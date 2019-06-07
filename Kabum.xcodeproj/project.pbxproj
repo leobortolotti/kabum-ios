@@ -13,6 +13,7 @@
 		CA9A35D222A9D97C005406FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA9A35D122A9D97C005406FE /* Assets.xcassets */; };
 		CA9A35D522A9D97C005406FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9A35D322A9D97C005406FE /* LaunchScreen.storyboard */; };
 		CA9A35DF22A9F711005406FE /* InicioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A35DE22A9F711005406FE /* InicioTableViewController.swift */; };
+		CA9A35E122AA0CB8005406FE /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A35E022AA0CB8005406FE /* UIView+Shadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CA9A35D422A9D97C005406FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA9A35D622A9D97C005406FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA9A35DE22A9F711005406FE /* InicioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioTableViewController.swift; sourceTree = "<group>"; };
+		CA9A35E022AA0CB8005406FE /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +82,29 @@
 			children = (
 				CA9A35C822A9D97A005406FE /* AppDelegate.swift */,
 				CA9A35DE22A9F711005406FE /* InicioTableViewController.swift */,
+				CA9A35E322AA0CE2005406FE /* CustomViews */,
+				CA9A35E222AA0CC1005406FE /* Extensions */,
 				CA9A35CE22A9D97A005406FE /* Main.storyboard */,
 				CA9A35D122A9D97C005406FE /* Assets.xcassets */,
 				CA9A35D322A9D97C005406FE /* LaunchScreen.storyboard */,
 				CA9A35D622A9D97C005406FE /* Info.plist */,
 			);
 			path = Kabum;
+			sourceTree = "<group>";
+		};
+		CA9A35E222AA0CC1005406FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CA9A35E022AA0CB8005406FE /* UIView+Shadow.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CA9A35E322AA0CE2005406FE /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA9A35DF22A9F711005406FE /* InicioTableViewController.swift in Sources */,
+				CA9A35E122AA0CB8005406FE /* UIView+Shadow.swift in Sources */,
 				CA9A35C922A9D97A005406FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
