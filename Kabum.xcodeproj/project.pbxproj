@@ -3,27 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A9DC352FEA523B860ACE13E /* Pods_Kabum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B075B53E92D90CDB9706A0 /* Pods_Kabum.framework */; };
 		CA9A35C922A9D97A005406FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A35C822A9D97A005406FE /* AppDelegate.swift */; };
-		CA9A35CB22A9D97A005406FE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A35CA22A9D97A005406FE /* FirstViewController.swift */; };
-		CA9A35CD22A9D97A005406FE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A35CC22A9D97A005406FE /* SecondViewController.swift */; };
 		CA9A35D022A9D97A005406FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9A35CE22A9D97A005406FE /* Main.storyboard */; };
 		CA9A35D222A9D97C005406FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA9A35D122A9D97C005406FE /* Assets.xcassets */; };
 		CA9A35D522A9D97C005406FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9A35D322A9D97C005406FE /* LaunchScreen.storyboard */; };
+		CA9A35DF22A9F711005406FE /* InicioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A35DE22A9F711005406FE /* InicioTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02A4602DD99ABAC38A74DCB3 /* Pods-Kabum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kabum.release.xcconfig"; path = "Target Support Files/Pods-Kabum/Pods-Kabum.release.xcconfig"; sourceTree = "<group>"; };
+		21B075B53E92D90CDB9706A0 /* Pods_Kabum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kabum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE90EAE6AC14886BD501278D /* Pods-Kabum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kabum.debug.xcconfig"; path = "Target Support Files/Pods-Kabum/Pods-Kabum.debug.xcconfig"; sourceTree = "<group>"; };
 		CA9A35C522A9D97A005406FE /* Kabum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kabum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9A35C822A9D97A005406FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA9A35CA22A9D97A005406FE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		CA9A35CC22A9D97A005406FE /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		CA9A35CF22A9D97A005406FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA9A35D122A9D97C005406FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA9A35D422A9D97C005406FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA9A35D622A9D97C005406FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA9A35DE22A9F711005406FE /* InicioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A9DC352FEA523B860ACE13E /* Pods_Kabum.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14BB73D5E5A64F919E513C03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21B075B53E92D90CDB9706A0 /* Pods_Kabum.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BFFFCB2718F5D2D63EB93C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE90EAE6AC14886BD501278D /* Pods-Kabum.debug.xcconfig */,
+				02A4602DD99ABAC38A74DCB3 /* Pods-Kabum.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CA9A35BC22A9D97A005406FE = {
 			isa = PBXGroup;
 			children = (
 				CA9A35C722A9D97A005406FE /* Kabum */,
 				CA9A35C622A9D97A005406FE /* Products */,
+				9BFFFCB2718F5D2D63EB93C0 /* Pods */,
+				14BB73D5E5A64F919E513C03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,8 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				CA9A35C822A9D97A005406FE /* AppDelegate.swift */,
-				CA9A35CA22A9D97A005406FE /* FirstViewController.swift */,
-				CA9A35CC22A9D97A005406FE /* SecondViewController.swift */,
+				CA9A35DE22A9F711005406FE /* InicioTableViewController.swift */,
 				CA9A35CE22A9D97A005406FE /* Main.storyboard */,
 				CA9A35D122A9D97C005406FE /* Assets.xcassets */,
 				CA9A35D322A9D97C005406FE /* LaunchScreen.storyboard */,
@@ -74,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA9A35D922A9D97C005406FE /* Build configuration list for PBXNativeTarget "Kabum" */;
 			buildPhases = (
+				9C35D2570B5F46D99D787176 /* [CP] Check Pods Manifest.lock */,
 				CA9A35C122A9D97A005406FE /* Sources */,
 				CA9A35C222A9D97A005406FE /* Frameworks */,
 				CA9A35C322A9D97A005406FE /* Resources */,
+				C5974441F0E00FF1970B42E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +156,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9C35D2570B5F46D99D787176 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kabum-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5974441F0E00FF1970B42E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kabum/Pods-Kabum-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kabum/Pods-Kabum-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kabum/Pods-Kabum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CA9A35C122A9D97A005406FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA9A35CD22A9D97A005406FE /* SecondViewController.swift in Sources */,
+				CA9A35DF22A9F711005406FE /* InicioTableViewController.swift in Sources */,
 				CA9A35C922A9D97A005406FE /* AppDelegate.swift in Sources */,
-				CA9A35CB22A9D97A005406FE /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +348,7 @@
 		};
 		CA9A35DA22A9D97C005406FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE90EAE6AC14886BD501278D /* Pods-Kabum.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +367,7 @@
 		};
 		CA9A35DB22A9D97C005406FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02A4602DD99ABAC38A74DCB3 /* Pods-Kabum.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
