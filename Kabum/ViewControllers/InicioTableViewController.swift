@@ -20,6 +20,8 @@ class InicioTableViewController: UITableViewController {
     let launchView = UINib(nibName: "LaunchView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! View
     
     let kBANNER_HEIGHT: CGFloat = 250
+    let kPRODUTO_TABLEVIEWCELL = "ProdutoTableViewCell"
+    let kLOADING_TABLEVIEWCELL = "LoadingTableViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,8 @@ class InicioTableViewController: UITableViewController {
         let logoImageView = UIImageView(image: UIImage(named: "kabumLogo"))
         self.navigationItem.titleView = logoImageView
         self.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        self.tableView.register(UINib(nibName: kPRODUTO_TABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: kPRODUTO_TABLEVIEWCELL)
+        self.tableView.register(UINib(nibName: kLOADING_TABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: kLOADING_TABLEVIEWCELL)
         // Muda o posicionamento padrão do RefreshControl da TableView por conta do Header
         self.refreshControl?.bounds = CGRect(x: (self.refreshControl?.bounds.origin.x)!, y: (self.refreshControl?.bounds.origin.y)! + kBANNER_HEIGHT, width: (self.refreshControl?.bounds.size.width)!, height: (self.refreshControl?.bounds.size.height)!)
     }
@@ -142,7 +146,7 @@ class InicioTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row < productsArray.count {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProdutoTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: kPRODUTO_TABLEVIEWCELL, for: indexPath) as! ProdutoTableViewCell
             
             let produto = productsArray[indexPath.row]
             
@@ -176,7 +180,7 @@ class InicioTableViewController: UITableViewController {
             return cell
         }
         else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! LoadingTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: kLOADING_TABLEVIEWCELL, for: indexPath) as! LoadingTableViewCell
             cell.activityIndicator.startAnimating()
             if productsArray.count > 0 {
                 cell.activityIndicator.isHidden = false

@@ -1,9 +1,9 @@
 //
 //  UIView+Shadow.swift
-//  StartUpFest
+//  Kabum
 //
 //  Created by Leonardo Bortolotti on 22/05/19.
-//  Copyright © 2019 Onovolab. All rights reserved.
+//  Copyright © 2019 Kabum. All rights reserved.
 //
 
 // Fonte: https://stackoverflow.com/questions/7484855/uiview-shadow-and-interfacebuilder
