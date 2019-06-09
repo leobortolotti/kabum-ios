@@ -6,7 +6,11 @@ target 'Kabum' do
   use_frameworks!
 
   # Pods for Kabum
+  
 pod 'Cosmos'
 pod 'Kingfisher', '~> 5.0'
+pod 'Alamofire', '~> 5.0.0-beta.5'
+pod 'SwiftyJSON', '~> 4.0'
+pod 'MXParallaxHeader'
 
 end
