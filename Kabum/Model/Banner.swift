@@ -3,6 +3,8 @@
 //
 //   let banner = try Banner(json)
 
+// Gerado utilizando o site https://app.quicktype.io/ e adaptado por Leonardo Bortolotti
+
 import Foundation
 
 // MARK: - Banner

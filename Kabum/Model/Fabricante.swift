@@ -2,15 +2,6 @@
 // To parse the JSON, add this file to your project and do:
 //
 //   let fabricante = try Fabricante(json)
-//
-// To read values from URLs:
-//
-//   let task = URLSession.shared.fabricanteTask(with: url) { fabricante, response, error in
-//     if let fabricante = fabricante {
-//       ...
-//     }
-//   }
-//   task.resume()
 
 // Gerado utilizando o site https://app.quicktype.io/ e adaptado por Leonardo Bortolotti
 

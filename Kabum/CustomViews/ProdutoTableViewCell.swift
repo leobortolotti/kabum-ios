@@ -11,6 +11,7 @@ import Cosmos
 
 class ProdutoTableViewCell: UITableViewCell {
 
+    @IBOutlet var containerView: UIView!
     @IBOutlet var fabricanteImage: UIImageView!
     @IBOutlet var produtoImage: UIImageView!
     @IBOutlet var produtoName: UILabel!

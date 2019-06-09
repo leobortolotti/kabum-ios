@@ -2,15 +2,6 @@
 // To parse the JSON, add this file to your project and do:
 //
 //   let oferta = try Oferta(json)
-//
-// To read values from URLs:
-//
-//   let task = URLSession.shared.ofertaTask(with: url) { oferta, response, error in
-//     if let oferta = oferta {
-//       ...
-//     }
-//   }
-//   task.resume()
 
 // Gerado utilizando o site https://app.quicktype.io/ e adaptado por Leonardo Bortolotti
 

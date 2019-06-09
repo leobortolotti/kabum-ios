@@ -77,6 +77,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CA50DEAE22AD6B510088801D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA9A35DE22A9F711005406FE /* InicioTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		CA95004C22AB18FB0066F827 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +116,7 @@
 			children = (
 				CA9A35ED22AAAEC5005406FE /* Constants.swift */,
 				CA9A35C822A9D97A005406FE /* AppDelegate.swift */,
-				CA9A35DE22A9F711005406FE /* InicioTableViewController.swift */,
+				CA50DEAE22AD6B510088801D /* ViewControllers */,
 				CA9A35E322AA0CE2005406FE /* CustomViews */,
 				CA9A35E222AA0CC1005406FE /* Extensions */,
 				CA9A35E422AA17FB005406FE /* Model */,

@@ -16,19 +16,23 @@ class InicioTableViewController: UITableViewController {
     
     var productsArray: [Produto] = []
     var page = 1
-    var shouldShowLoading = 1
+    var shouldShowLoading = 1 // Utilizado Int em vez de Bool, para facilitar no gerenciamento da LoadingTableViewCell / 0 - false / 1 - true
     let launchView = UINib(nibName: "LaunchView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! View
+    
+    let kBANNER_HEIGHT: CGFloat = 250
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Adiciona uma view semelhante a LaunchScreen para mostrar a tela inicial apenas após o carregamento do do conteúdo (comportamento semelhante ao Android)
         launchView.frame = self.view.frame
         self.tabBarController?.view.addSubview(launchView)
 
         let logoImageView = UIImageView(image: UIImage(named: "kabumLogo"))
         self.navigationItem.titleView = logoImageView
         self.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        self.refreshControl?.bounds = CGRect(x: (self.refreshControl?.bounds.origin.x)!, y: (self.refreshControl?.bounds.origin.y)! + 250, width: (self.refreshControl?.bounds.size.width)!, height: (self.refreshControl?.bounds.size.height)!)
+        // Muda o posicionamento padrão do RefreshControl da TableView por conta do Header
+        self.refreshControl?.bounds = CGRect(x: (self.refreshControl?.bounds.origin.x)!, y: (self.refreshControl?.bounds.origin.y)! + kBANNER_HEIGHT, width: (self.refreshControl?.bounds.size.width)!, height: (self.refreshControl?.bounds.size.height)!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +70,7 @@ class InicioTableViewController: UITableViewController {
                 let json = JSON(value)
                 do {
                     let banner = try Banner(json["banner"].rawString()!)
-                    let bannerImageView = ImageView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: 250))
+                    let bannerImageView = ImageView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.kBANNER_HEIGHT))
                     bannerImageView.kf.setImage(with: URL(string: banner.img!))
                     bannerImageView.contentMode = .scaleAspectFill
                     bannerImageView.clipsToBounds = true
@@ -108,6 +112,7 @@ class InicioTableViewController: UITableViewController {
                     }
                 }
                 
+                // Verifica se existem mais produtos a serem carregados, caso não, remove LoadingTableViewCell
                 if jsonArray.count == 0 && self.shouldShowLoading != 0 {
                     self.shouldShowLoading = 0
                     self.tableView.beginUpdates()
@@ -145,11 +150,12 @@ class InicioTableViewController: UITableViewController {
             cell.produtoImage.kf.setImage(with: URL(string: produto.img!))
             cell.produtoName.text = produto.nome
             
+            // AttributedString para realizar o efeito de fonte menor no "à vista"
             var attributedString: NSMutableAttributedString!
             var precoStringToUse: String!
             let precoDesconto = Double(produto.precoDesconto!) ?? 0
             let precoDescontoPrime = Double(produto.precoDescontoPrime!) ?? 0
-            if precoDescontoPrime < precoDesconto {
+            if precoDescontoPrime < precoDesconto && precoDescontoPrime != 0 {
                 precoStringToUse = produto.precoDescontoPrimeFormatado
                 attributedString = NSMutableAttributedString(string: precoStringToUse + " à vista (Prime)")
             }
@@ -184,19 +190,31 @@ class InicioTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row < productsArray.count {
-            return 220
+            return 220 // Tamanho para a ProdutoTableViewCell
         }
         else {
-            return 60
+            return 60 // Tamanho para a LoadingTableViewCell
         }
     }
     
+    // Funções para realizar animação de click na cell
+    override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ProdutoTableViewCell
+        cell.containerView.shadowOpacity = 0.3
+    }
+    
+    override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ProdutoTableViewCell
+        cell.containerView.shadowOpacity = 1
+    }
+    
+    // MARK: - ScrollViewDelegate
+    
+    // Método para reconhecer quando o scroll da TableView chega ao final, para carregar mais produtos
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        // UITableView only moves in one direction, y axis
         let currentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
-        // Change 10.0 to adjust the distance from bottom
-        if maximumOffset - currentOffset <= 60.0 {
+        if maximumOffset - currentOffset <= 60 {
             page += 1
             self.loadProducts()
         }

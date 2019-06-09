@@ -2,15 +2,6 @@
 // To parse the JSON, add this file to your project and do:
 //
 //   let produto = try Produto(json)
-//
-// To read values from URLs:
-//
-//   let task = URLSession.shared.produtoTask(with: url) { produto, response, error in
-//     if let produto = produto {
-//       ...
-//     }
-//   }
-//   task.resume()
 
 // Gerado utilizando o site https://app.quicktype.io/ e adaptado por Leonardo Bortolotti
 
